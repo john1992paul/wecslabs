@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Bitter:700|Josefin+Sans:300,400,600,700" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<link rel="stylesheet"  href={{url_for('static', filename="css/home/homepage.css")}}>
+</head>
+
+<body>
+   <!-- Navigation Bar -->
+    <nav class = "navbar">  
+    	<div class="logo"><img class = "center" src={{url_for('static', filename="img/common/logo.png")}} alt="wecs" id="wecs" ></div>
+    </nav>
+    <form action= "{{url_for('home.confirm')}}" method = 'post' class = "center">
+	    <h1> Enter the secret access code</h1>
+	    <input type = "password" class = "code" name="secret_key">
+	</form>
+	<h1 class = 'message'>{{message}}</h1>
+</body>
+
+<script type="text/javascript">
+	$( document ).ready(function() {
+    	setTimeout(function() {
+    		$('.message').hide();
+    	},2000);
+    	$.ajax({
+    		method: 'POST',
+    		url: '/delete'
+    	})
+    });
+</script>
+
+</html>
