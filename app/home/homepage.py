@@ -21,6 +21,8 @@ def confirm():
 
 @home.route('/delete', methods=['POST'])
 def delete():
-	print('delete is working')
-	del login_session['message']
+	try:
+		del login_session['message']
+	except:
+		pass
 	return 'deleted'

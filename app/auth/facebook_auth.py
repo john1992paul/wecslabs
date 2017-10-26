@@ -5,9 +5,10 @@ from oauth2client.client import FlowExchangeError
 import httplib2
 import json
 import requests
+from datetime import datetime
 
 from . import auth
-from .helper import getUser, createUser
+from .helper import getUser, createUser, calc_stats
 
 # --------------------------------------------------------------------------------------------------------------------------
 #                  Facebook Login and Logout
@@ -63,8 +64,8 @@ def fbconnect():
     if user:
         login_session['titan_id'] = str(user["titan_id"])
         login_session["username"] = str(user["username"])
-        login_session["location"] = str(user["location"])
-        login_session["position"] = str(user["position"])
+        login_session["user_location"] = str(user["user_location"])
+        login_session["position"] = str(user["user_position"])
         login_session["current_project"] = str(user["current_project"])
         login_session['motivation'] = str(user["motivation"])
         login_session['fb_link'] = str(user["fb_link"])
@@ -72,15 +73,20 @@ def fbconnect():
         login_session['linkedin_link'] = str(user["linkedin_link"])
         login_session['phone'] = str(user["phone"])
         login_session['ideas'] = str(user["ideas"])
-        login_session["projects"] = str(user["projects"])
-        login_session['work_days'] = str(user["work_days"])
-        login_session['work_streak'] = str(user["work_streak"])
+        login_session["projects"] = (user["projects"])
+        login_session['work_days'] = int(user["work_days"])
+        login_session['work_streak'] = int(user["work_streak"])
         login_session['tasks'] = str(user["tasks"])
-        login_session['awards'] = str(user["awards"])
-        login_session['comp_day_tasks'] = str(user["comp_day_tasks"])
-        login_session['tot_day_tasks'] = str(user["tot_day_tasks"])
-        login_session['comp_tot_tasks'] = str(user["comp_tot_tasks"])
-        login_session['tot_tot_tasks'] = str(user["tot_tot_tasks"])
+        login_session['awards'] = (user["awards"])
+        login_session['award_tag'] = (user["award_tag"])
+        login_session['max_tasks'] = int(user["max_tasks"])
+        login_session['comp_day_tasks'] = int(user["comp_day_tasks"])
+        login_session['tot_day_tasks'] = int(user["tot_day_tasks"])
+        login_session['comp_tot_tasks'] = int(user["comp_tot_tasks"])
+        login_session['tot_tot_tasks'] = int(user["tot_tot_tasks"])
+        login_session['display'] = []
+
+        calc_stats()
     return "Welcome"
 
 
@@ -107,7 +113,7 @@ def fbdisconnect():
     del login_session["email"],
     del login_session['titan_id'],
     del login_session["username"],
-    del login_session["location"],
+    del login_session["user_location"],
     del login_session["position"],
     del login_session["current_project"],
     del login_session['motivation'],
@@ -121,10 +127,13 @@ def fbdisconnect():
     del login_session['work_streak'],
     del login_session['tasks'],
     del login_session['awards'],
+    del login_session['max_tasks'],
     del login_session['comp_day_tasks'],
     del login_session['tot_day_tasks'],
     del login_session['comp_tot_tasks'],
-    del login_session['tot_tot_tasks']
+    del login_session['tot_tot_tasks'],
+    del login_session['display']
+    del login_session['award_tag']
 
 
-    return redirect('/')
+    return redirect(url_for("home.homepage"))

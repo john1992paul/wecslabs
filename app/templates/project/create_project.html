@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale=1">
+	<link rel="stylesheet"  href={{url_for('static', filename = 'css/project/create.css')}}>
+	<link href="https://fonts.googleapis.com/css?family=Bitter:700|Josefin+Sans:300,400,600,700" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<script>
+  	$( function() {
+    	$( ".datepicker" ).datepicker();
+  	} );
+  	</script>
+</head>
+
+<body>
+   <!-- Navigation Bar -->
+    <nav class = "navbar">  
+    	<div class="logo"><img class = "center" src={{url_for('static', filename = 'img/common/logo.png')}} alt="wecs" id="wecs" ></div>
+    	<a href={{url_for('auth.fbdisconnect')}}><div class="signout button">Logout</div></a>
+    	<a href={{url_for('profile.profile_redirect')}}><div class="home button">Home</div></a>
+    </nav>
+
+    <main>
+    	<h1> Start New Project </h1>
+	    <form action= "{{url_for('project.register')}}" method = 'post'>
+	    	<div class = "division a" id = "name">
+				<input type="text" name = "project_name" value= "" placeholder="Project Name">
+			</div>
+	    	<div class = "division" id = "start_date">
+				<input type="text" class="datepicker" name = "from" placeholder="From Date" id = "from">
+			</div>
+			<div class = "division" id = "end_date">
+				<input type="text" class="datepicker" name = "to" placeholder="To Date" id = "to">
+			</div>
+			<button type="submit" class = "btn" > Submit </button>
+		</form>
+		<h1 class="message">{{message}}</h1>
+
+    </main>
+
+</body>
+
+<script type="text/javascript">
+	$( document ).ready(function() {
+    	setTimeout(function() {
+    		$('.message').hide();
+    	},2000);
+    	$.ajax({
+    		method: 'POST',
+    		url: '/project/delete'
+    	})
+    });
+</script>
+
+
+</html>

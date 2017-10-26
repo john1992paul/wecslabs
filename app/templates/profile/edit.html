@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale=1">
+	<link rel="stylesheet"  href={{url_for('static', filename='css/profile/edit.css')}}>
+	<link href="https://fonts.googleapis.com/css?family=Bitter:700|Josefin+Sans:300,400,600,700" rel="stylesheet">
+</head>
+
+<body>
+   <!-- Navigation Bar -->
+    <nav class = "navbar">  
+    	<div class="logo"><img class = "center" src={{url_for('static', filename='img/common/logo.png')}} alt="wecs" id="wecs" ></div>
+    	<a href={{url_for('auth.fbdisconnect')}}><div class="signout button">Logout</div></a>
+    	<a href={{url_for('profile.profile_redirect')}}><div class="home button">Home</div></a>
+    </nav>
+    <main class ="laptop">
+    	<h1>Edit Info</h1>
+    	<form action= "{{url_for('profile.editinfo')}}" method = 'post' class = "center">
+	    	<input type="text" name="address" maxlength="30" value="{{location}}">
+	    	<input type="text" name="self_motivate" maxlength="60" value="{{motivation}}">
+	    	<input type="text" name="fb_link" value="{{fb_link}}">
+	    	<input type="text" name="insta_link" value="{{insta_link}}">
+	    	<input type="text" name="linkedin_link" value="{{linkedin_link}}">
+	    	<input type="text" name="email" maxlength="30" value="{{email}}">
+	    	<input type="text" name="phone" maxlength="30" value="{{phone}}">
+	    	<button type="submit" class="save button">Save</div>
+	    </form>
+    </main>
+    
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale=1">
+	<link rel="stylesheet"  href={{url_for('static', filename = 'css/project/add_project_mem.css')}}>
+	<link href="https://fonts.googleapis.com/css?family=Bitter:700|Josefin+Sans:300,400,600,700" rel="stylesheet">
+</head>
+
+<body>
+   <!-- Navigation Bar -->
+    <nav class = "navbar">  
+    	<div class="logo"><img class = "center" src={{url_for('static', filename = 'img/common/logo.png')}} alt="wecs" id="wecs" ></div>
+    	<a href={{url_for('auth.fbdisconnect')}}><div class="signout button">Logout</div></a>
+        <a href={{url_for('profile.profile_redirect')}}><div class="home button">Home</div></a>
+    </nav>
+    <div id="main_container"></div>
+    <div id="project_name" class="hidden">{{project_name}}</div>
+
+    <button type="submit" id="submit_btn" class = "btn hidden" > Submit </button>
+
+</body>
+
+<script id="main_view" type="text/template">
+    <div class="members"><h1>Add members to project</h1><div id="subcontainer_members"></div></div>
+    <main class ="laptop"><h1>{{project_name}}</h1><div id="subcontainer_main"></div></main>
+</script>
+
+<script id="member_view" type="text/template">
+    <div class="photo"><img class="center" src= <%=titan_id%> ></div>
+    <div class="name"><p class="center" > <%=name%> </p></div>
+    <div id="add_button" class="action_button"><img class="center" src={{url_for('static', filename = 'img/project/add.png')}}></div>
+</script>
+
+<script id="project_member_view" type="text/template">
+        <div class="photo"><img class="center" src= <%=titan_id%> ></div>
+        <div class="member_name"><p class="center"> <%=name%> </p></div>
+        <div class="role" id="position"><p class="center"><%= position %></p></div>
+        <div class="role hidden"><input id="role" class="center" type="text" name="role" value= "<%= position %>" ></div>
+        <div id="delete_button" class="action_button"><img class="center" src={{url_for('static', filename = 'img/project/delete.png')}}></div>
+</script>
+
+<script src={{url_for('static', filename = "js/lib/jquery.js")}}></script>
+<script src={{url_for('static', filename = "js/lib/underscore.js")}}></script>
+<script src={{url_for('static', filename = "js/lib/backbone.js")}}></script>
+<script src={{url_for('static', filename = "js/lib/backbone.radio.js")}}></script>
+<script src={{url_for('static', filename = "js/lib/backbone.marionette.js")}}></script>
+<script src={{url_for('static', filename = "js/project/add_project_mem.js")}}></script> 
+
+</html>

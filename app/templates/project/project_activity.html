@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale=1">
+	<link rel="stylesheet"  href={{url_for('static', filename = 'css/project/project_activity.css')}}>
+	<link href="https://fonts.googleapis.com/css?family=Bitter:700|Josefin+Sans:300,400,600,700" rel="stylesheet">
+</head>
+
+<body>
+   <!-- Navigation Bar -->
+    <nav class = "navbar">  
+    	<<div class="logo"><img class = "center" src={{url_for('static', filename = 'img/common/logo.png')}} alt="wecs" id="wecs" ></div>
+        <a href={{url_for('auth.fbdisconnect')}}><div class="signout button">Logout</div></a>
+        <a href={{url_for('profile.profile_redirect')}}><div class="home button">Home</div></a>
+    </nav>
+    <div class="hidden" id="project_global_name">{{project_name}}</div>
+    <main class ="laptop" id="main_container"></main>
+    <div class="save_arrow hide_arrow"><img id="save_arrow" src={{url_for('static', filename = 'img/project/red_arrow.gif')}}><p>Save to commit changes</p></div>
+</body>
+
+<script type="text/template" id="main_template">
+	<h1 id="project_name">{{project_name}}</h1>
+	<div id="activity_regions"></div>
+	<div id="activities_list"></div>
+</script>
+
+<script type="text/template" id="date_header_template">
+    	<div class="activity_day_head">
+    		<div class="header_button arrow" title="Previous Day" id="previous_day"><img class="center" src={{url_for('static', filename = 'img/project/previous.png')}}></div>
+    		<div class="date_head"><p class="center" id="date"><%=date%></p></div>
+    		<div class="header_button arrow" title="Next Day" id="next_day"><img class="center" src={{url_for('static', filename = 'img/project/next.png')}}></div>
+    		<div class="header_button" title="Save" id="save_button"><img class="center" src={{url_for('static', filename = 'img/project/save.png')}}></div>
+    		<div class="header_button" title="Add an activity" id="add_button"><img class="center" src={{url_for('static', filename = 'img/project/add.png')}}></div>
+    		<div class="header_button" title="Hide and Unhide" id="toggle_button"><img class="center" src={{url_for('static', filename = 'img/project/down.png')}}></div>
+    	</div>
+    	<div class="activity_container hidden" id="add_new">
+    		<input class="activity_input" placeholder="Enter the new activity" id="input_activity">
+    	</div>
+    	
+</script>
+
+<script type="text/template" id="activity_template">
+	<% if (checked === 1) { %>
+    	<div class="activity_status" id="check"><img class="center" src={{url_for('static', filename = 'img/project/green_dot.png')}}></div>
+    <% } %>
+    <% if (checked === 0) { %>
+    	<div class="activity_status" id="check"><img class="center" src={{url_for('static', filename = 'img/project/red_dot.png')}}></div>
+    <% } %>
+    <div class="activity_name"><p > <%=activity_name%> </p></div>
+    <div class="activity_name hidden"><input class="center" value="<%=activity_name%>"></div>
+    <div class="activity_delete" title="Delete activity" id="delete"><img class="center" src={{url_for('static', filename = 'img/project/delete.png')}}></div>
+</script>
+
+<script src={{url_for('static', filename = "js/lib/jquery.js")}}></script>
+<script src={{url_for('static', filename = "js/lib/underscore.js")}}></script>
+<script src={{url_for('static', filename = "js/lib/backbone.js")}}></script>
+<script src={{url_for('static', filename = "js/lib/backbone.radio.js")}}></script>
+<script src={{url_for('static', filename = "js/lib/backbone.marionette.js")}}></script>
+<script src={{url_for('static', filename = 'js/project/project_activity.js')}}></script>
+
+</html>

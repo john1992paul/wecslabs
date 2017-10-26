@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale=1">
+	<link rel="stylesheet"  href={{url_for('static', filename = 'css/profile/profile.css')}}>
+	<link href="https://fonts.googleapis.com/css?family=Bitter:700|Josefin+Sans:300,400,600,700" rel="stylesheet">
+</head>
+
+<body>
+   <!-- Navigation Bar -->
+    <nav class = "navbar">  
+    	<div class="logo"><img class = "center" src={{url_for('static', filename = 'img/common/logo.png')}} alt="wecs" id="wecs" ></div>
+    	<a href={{url_for('auth.fbdisconnect')}}><div class="signout button">Logout</div></a>
+    </nav>
+    <main class ="laptop">
+    	<div class = "personal">
+    		<div class = "line dp">
+    			<img class = "center image" src = {{pro_pic}}>
+    		</div>
+    		<div class = "line personal_info">
+    			<div class = "personal_info_item"><h1> {{username}}</div>
+    			<div class = "personal_info_item"><p class = "address">{{location}} </p><br><br></div>
+    			<div class = "personal_info_item"><p><b>{{position}}</b></p></div>
+    			<div class = "personal_info_item"><p> Current Project: <b>{{current_project}}</b> </p></div>
+    			<div class = "personal_info_item"><p> Self Motivate: <b>{{motivation}}</b> </p></div>
+    		<div class = "contacts_board">
+    			<a href = "{{fb_link}}"><img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/facebook.png" class = "contact_image"></a>
+    			<a href = "{{insta_link}}"><img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/instagram.png" class = "contact_image"></a>
+    			<a href = "{{linkedin_link}}"><img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/linkedin.png" class = "contact_image"></a>
+    			<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/messenger.png" class = "contact_image" title = "{{email}}">
+    			<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/phone.png" class = "contact_image" title = "{{phone}}">
+    		</div>
+    		</div>
+    		<div class = "line dp_cartoon">
+    			<img class = "center image" src = {{cartoon_image}}>
+    		</div>
+    	</div>
+    	<hr>
+
+    	<div class = "professional">
+
+    		<div class = "stat_board">
+    			<div class = "stat_item"> <p class = "center"> Ideas <br><b class = "number"> {{ideas}} </b> </p> </div>
+    			<div class = "stat_item"> <p class = "center"> Projects<br><b class = "number"> {{projects}} </b> </p> </div>
+    			<div class = "stat_item"> <p class = "center"> Work Days<br><b class = "number"> {{work_days}} </b> </p> </div>
+    			<div class = "stat_item"> <p class = "center"> Work Streak<br><b class = "number"> {{work_streak}} </b> </p> </div>
+    			<div class = "stat_item"> <p class = "center"> Tasks<br><b class = "number"> {{tasks}} </b> </p> </div>
+    			<div class = "stat_item"> <p class = "center"> Awards<br><b class = "number"> {{awards}} </b> </p> </div>
+    			
+    			<div class = "stat_item"> 
+    				<div id="bars">
+						<div class="bar" data-percent="{{day_perc}}">
+							<p> Com.Day.Task </p>
+							<canvas class="bar-circle" width="70" height="70"></canvas>
+						</div>
+					</div>
+    			</div>
+    			<div class = "stat_item"> 
+    				<div id="bars">
+						<div class="bar" data-percent="{{tot_perc}}">
+							<p> Com.Tot.Task </p>
+							<canvas class="bar-circle" width="70" height="70"></canvas>
+						</div>
+					</div>
+    			</div>
+    			<div class = "stat_item"> 
+    				<div id="bars">
+						<div class="bar" data-percent="{{form}}">
+							<p> Form </p>
+							<canvas class="bar-circle" width="70" height="70"></canvas>
+						</div>
+					</div>
+    			</div>
+
+    			<div class = "stat_item"> <p class = "ach"> Max Task a day<br><br> <img src = {{award_1}} class = "ach_img" </p> </div>
+    			<div class = "stat_item"> <p class = "ach"> Joined Trips.com<br><br> <img src = {{award_2}} class = "ach_img" </p> </div>
+    			<div class = "stat_item"> <p class = "ach"> Joined Labs<br><br> <img src = {{award_3}} class = "ach_img" </p> </div>
+    		</div>
+
+    	</div>
+    </main>
+    <div class = "taskboard">
+    	<div class = "task team">
+    		<div class = "heading"><p><b> TEAM BASE </b></p></div><br><br>
+    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/team.png" class = "ach_img">
+    	</div>
+    	<div class = "task daily">
+    		<div class = "heading"><p><b> DAILY TASKS </b></p></div><br><br>
+    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/daily_task.png" class = "ach_img">
+    	</div>
+    	<div class = "task messenger">
+    		<div class = "heading"><p><b> MESSENGER </b></p></div><br><br>
+    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/messenger.png" class = "ach_img">
+    	</div>
+    	<div class = "task actplanner">
+    		<div class = "heading"><p><b> IDEA BOARD </b></p></div><br><br>
+    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/idea.png" class = "ach_img">
+    	</div>
+    	<a href={{url_for('project.project_central')}}><div class = "task proplanner">
+    		<div class = "heading"><p><b> PROJECT PLANNER </b></p></div><br><br>
+    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/proplanner.png" class = "ach_img">
+    	</div></a>
+    	<div class = "task track">
+    		<div class = "heading"><p><b> TRACK PROGRESS </b></p></div><br><br>
+    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/track.png" class = "ach_img">
+    	</div>
+    	<div class = "task game">
+    		<div class = "heading"><p><b> WECS WORDS GAME</b></p></div><br><br>
+    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/game.png" class = "ach_img">
+    	</div>
+    	<div class = "task tictactoe">
+    		<div class = "heading"><p><b> TIC TAC TOE </b></p></div><br><br>
+    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/tictactoe.png" class = "ach_img">
+    	</div>
+    </div>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+	(function() {
+	
+	var Progress = function( element ) {
+		
+		this.context = element.getContext( "2d" );
+		this.refElement = element.parentNode;
+		this.loaded = 0;
+		this.start = 4.72;
+		this.width = this.context.canvas.width;
+		this.height = this.context.canvas.height;
+		this.total = parseInt( this.refElement.dataset.percent, 10 );
+		this.timer = null;
+		
+		this.diff = 0;
+		color = ['#ffbb00', '#00c200', '#0097cc'];
+		if (this.total < 33){
+			col = color[0];
+		}else if(this.total < 66){
+			col = color[2];
+		}else{
+			col = color[1];
+		}
+
+		this.init(col);	
+	};
+	
+	Progress.prototype = {
+		init: function(col) {
+			var self = this;
+			self.timer = setInterval(function() {
+				self.run(col);	
+			}, 25);
+		},
+		run: function(col) {
+			var self = this;
+			self.diff = ( ( self.loaded / 100 ) * Math.PI * 2 * 10 ).toFixed( 2 );	
+			self.context.clearRect( 0, 0, self.width, self.height );
+			self.context.lineWidth = 5;
+			self.context.fillStyle = "#fff"; 
+			self.context.strokeStyle = col;
+			self.context.textAlign = "center";
+			self.context.font = "600 20px 'Josefin Sans', sans-serif";
+			self.context.fillText( self.loaded + "%", self.width * .5, self.height * .5 + 8, self.width);
+			self.context.beginPath();
+			self.context.arc( 35, 35, 30, self.start, self.diff / 10 + self.start, false );
+			self.context.stroke();
+			
+			if( self.loaded >= self.total ) {
+				clearInterval( self.timer );
+			}
+			
+			self.loaded++;
+		}
+	};
+	
+	var CircularSkillBar = function( elements ) {
+		this.bars = document.querySelectorAll( elements );
+		if( this.bars.length > 0 ) {
+			this.init();
+		}	
+	};
+	
+	CircularSkillBar.prototype = {
+		init: function() {
+			this.tick = 25;
+			this.progress();
+			
+		},
+		progress: function() {
+			var self = this;
+			var index = 0;
+			var firstCanvas = self.bars[0].querySelector( "canvas" );
+			var firstProg = new Progress( firstCanvas );
+			
+			
+			
+			var timer = setInterval(function() {
+				index++;
+				if( index == self.bars.length ) {
+						clearInterval( timer );
+						return;
+				} 				
+				var canvas = self.bars[index].querySelector( "canvas" );
+				var prog = new Progress( canvas );
+				
+				
+			}, self.tick * 100);
+				
+		}
+	};
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		var circularBars = new CircularSkillBar( "#bars .bar" );
+	});
+	
+})();
+</script>

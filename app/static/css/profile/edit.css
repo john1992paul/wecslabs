@@ -1,0 +1,118 @@
+html{
+	background-color: #1b1b1b;
+	overflow-y: hidden;
+}
+body{
+	max-width: 100%;
+	margin :0px;
+	text-align: center;
+	overflow: scroll;
+}
+
+p{
+	margin: 0;
+  	display: inline-block;
+	font-size: 1.1vw;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: lighter;
+ 	color: #fff;
+}
+
+h1{
+	padding-top: 2vh;
+	margin: 0px;
+	padding-bottom: 0vh;
+	font-size: 1.8vw;
+	color: #ffbb00;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 700;
+}
+
+#wecs {
+  height: 3vw;
+  margin-top: 2vh;
+}
+.logo {
+	display: inline-block;
+	float: left;
+    height: 10vh;
+    width: 10vw;
+    margin-left: 2%;
+    position: relative;
+}
+.navbar {
+  background-color: #000;
+  width:100%;
+  height: 10vh;
+  position: relative;
+  margin-bottom: 0px;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.button {
+	color: #fff;
+	width: 4vw;
+    float: right;
+    margin-right: 5vw;
+    margin-top: 2.2vh;
+    font-size: 1vw;
+    background-color: rgb(67, 85, 122);
+    padding: 1vw;
+    border-radius: 0.8vw;
+    font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+}
+
+.home {
+	margin-right: 1vw;
+}
+
+main{
+	display: inline-block;
+	position: relative;
+	width: 60%;
+	min-height: calc(90vh);
+	margin-top: 5vh;
+	vertical-align: top;
+}
+
+input {
+	width: 60%;
+	height: 6vh;
+	margin-top: 2vh;
+	margin-right: 20%;
+	margin-left: calc(20% - 1vw);
+	padding-left: 2vw;
+	font-size: 1.2vw;
+	border-radius: 0.4vw;
+	color: #363636;
+}
+
+.save {
+	border: none;
+	padding-left: 2vw;
+	padding-right: 4vw;
+	float: inherit;
+	margin-right: 0;
+	margin-left: -1vw;
+}
+
+.save:focus {
+	outline: none;
+}
+
+
+@media only screen and (max-width: 800px) {
+.laptop{
+	display: none;
+}
+main{
+  width: 100%;
+  margin-left: 0;
+}
+
+.logo {
+  margin: auto;
+}}

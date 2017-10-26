@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale=1">
+	<link rel="stylesheet"  href={{url_for('static', filename = 'css/project/projectmain.css')}}>
+	<link href="https://fonts.googleapis.com/css?family=Bitter:700|Josefin+Sans:300,400,600,700" rel="stylesheet">
+</head>
+
+<body>
+   <!-- Navigation Bar -->
+    <nav class = "navbar">  
+    	<div class="logo"><img class = "center" src={{url_for('static', filename = 'img/common/logo.png')}} alt="wecs" id="wecs" ></div>
+    	<a href={{url_for('auth.fbdisconnect')}}><div class="signout button">Logout</div></a>
+    	<a href={{url_for('profile.profile_redirect')}}><div class="home button">Home</div></a>
+    </nav>
+
+    <main class ="laptop">
+    	<a href={{url_for('project.create_project')}}><div class="create_edit_project"><h1 class="center">Create Project</h1></div></a>
+        <div class="create_edit_project"><h1 class="center">Edit Project</h1></div>
+    </main>
+
+</body>
+</html>

@@ -13,9 +13,9 @@
     <nav class = "navbar">  
     	<div class="logo"><img class = "center" src={{url_for('static', filename="img/common/logo.png")}} alt="wecs" id="wecs" ></div>
     </nav>
-    <form action= "{{url_for('home.confirm')}}" method = 'post' class = "center">
+    <form action= "{{url_for('home.confirm')}}" method = 'post' class = "center" autocomplete="off">
 	    <h1> Enter the secret access code</h1>
-	    <input type = "password" class = "code" name="secret_key">
+	    <input type = "password" class = "code" name="secret_key" autocomplete="off" autofill="false">
 	</form>
 	<h1 class = 'message'>{{message}}</h1>
 </body>
