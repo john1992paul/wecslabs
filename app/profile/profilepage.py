@@ -117,8 +117,19 @@ def profile_page(titan_id):
 			if user['username'] == 'John Paul':
 				cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/john-medium.png'
 
-			if login_session['username'] == 'Abin Mittu':
+			if user['username'] == 'Abin Mittu':
 				cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/abin-medium.png'
+
+			if user['username'] == 'Steve Paul':
+				cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/steve-medium.png'
+			if user['username'] == 'Thomas George':
+				cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/thomas-medium.png'
+			if user['username'] == 'Jobin Geo':
+				cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/jobin-medium.png'
+			if user['username'] == 'Eldose':
+				cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/sunny-medium.png'
+			if user['username'] == 'Philipose Kuriakose':
+				cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/philipose-medium.png'
 
 			return render_template('profile/profile_others.html',  titan_id=user['titan_id'],
 																username=user['username'],
@@ -132,7 +143,7 @@ def profile_page(titan_id):
 																linkedin_link=user['linkedin_link'],
 																email=user['email'],
 																phone=user['phone'],
-																cartoon_image="https://s3.us-east-2.amazonaws.com/wecslabspropic/john-medium.png",
+																cartoon_image= cartoon_image,
 																ideas=user['ideas'],
 																projects=len(user['projects']),
 																work_days=user['work_days'],
