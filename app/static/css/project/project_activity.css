@@ -1,6 +1,5 @@
 html{
 	background-color: #1b1b1b;
-	overflow-y: hidden;
 }
 body{
 	max-width: 100%;
@@ -80,7 +79,6 @@ main{
 	height: calc(85vh);
 	margin-top: 0px;
 	vertical-align: top;
-  overflow-y: scroll;
 }
 
 ::-webkit-scrollbar {

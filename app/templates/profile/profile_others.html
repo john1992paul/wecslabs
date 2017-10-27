@@ -12,6 +12,7 @@
     <nav class = "navbar">  
     	<div class="logo"><img class = "center" src={{url_for('static', filename = 'img/common/logo.png')}} alt="wecs" id="wecs" ></div>
     	<a href={{url_for('auth.fbdisconnect')}}><div class="signout button">Logout</div></a>
+    	<a href={{url_for('profile.profile_redirect')}}><div class="home button">Home</div></a>
     </nav>
     <main class ="laptop">
     	<div class = "personal">
@@ -80,40 +81,42 @@
 
     	</div>
     </main>
-    <div class = "taskboard">
-    	<a href = "/teambase"><div class = "task team">
-    		<div class = "heading"><p><b> TEAM BASE </b></p></div><br><br>
-    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/team.png" class = "ach_img">
-    	</div></a>
-    	<div class = "task daily">
-    		<div class = "heading"><p><b> DAILY TASKS </b></p></div><br><br>
-    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/daily_task.png" class = "ach_img">
-    	</div>
-    	<div class = "task messenger">
-    		<div class = "heading"><p><b> MESSENGER </b></p></div><br><br>
-    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/messenger.png" class = "ach_img">
-    	</div>
-    	<div class = "task actplanner">
-    		<div class = "heading"><p><b> IDEA BOARD </b></p></div><br><br>
-    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/idea.png" class = "ach_img">
-    	</div>
-    	<a href={{url_for('project.project_central')}}><div class = "task proplanner">
-    		<div class = "heading"><p><b> PROJECT PLANNER </b></p></div><br><br>
-    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/proplanner.png" class = "ach_img">
-    	</div></a>
-    	<div class = "task track">
-    		<div class = "heading"><p><b> TRACK PROGRESS </b></p></div><br><br>
-    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/track.png" class = "ach_img">
-    	</div>
-    	<div class = "task game">
-    		<div class = "heading"><p><b> WECS WORDS GAME</b></p></div><br><br>
-    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/game.png" class = "ach_img">
-    	</div>
-    	<div class = "task tictactoe">
-    		<div class = "heading"><p><b> TIC TAC TOE </b></p></div><br><br>
-    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/tictactoe.png" class = "ach_img">
-    	</div>
-    </div>
+   <div id="wrapper">
+	    <div class = "taskboard">
+	    	<a href = "/teambase"><div class = "task team">
+	    		<div class = "heading"><p><b> TEAM BASE </b></p></div><br><br>
+	    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/team.png" class = "ach_img">
+	    	</div></a>
+	    	<div class = "task daily">
+	    		<div class = "heading"><p><b> DAILY TASKS </b></p></div><br><br>
+	    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/daily_task.png" class = "ach_img">
+	    	</div>
+	    	<div class = "task messenger">
+	    		<div class = "heading"><p><b> MESSENGER </b></p></div><br><br>
+	    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/messenger.png" class = "ach_img">
+	    	</div>
+	    	<div class = "task actplanner">
+	    		<div class = "heading"><p><b> IDEA BOARD </b></p></div><br><br>
+	    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/idea.png" class = "ach_img">
+	    	</div>
+	    	<a href={{url_for('project.project_central')}}><div class = "task proplanner">
+	    		<div class = "heading"><p><b> PROJECT PLANNER </b></p></div><br><br>
+	    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/proplanner.png" class = "ach_img">
+	    	</div></a>
+	    	<div class = "task track">
+	    		<div class = "heading"><p><b> TRACK PROGRESS </b></p></div><br><br>
+	    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/track.png" class = "ach_img">
+	    	</div>
+	    	<div class = "task game">
+	    		<div class = "heading"><p><b> WECS WORDS GAME</b></p></div><br><br>
+	    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/game.png" class = "ach_img">
+	    	</div>
+	    	<div class = "task tictactoe">
+	    		<div class = "heading"><p><b> TIC TAC TOE </b></p></div><br><br>
+	    		<img src = "https://s3.us-east-2.amazonaws.com/wecslabspropic/tictactoe.png" class = "ach_img">
+	    	</div>
+	    </div>
+	</div>
 
 </body>
 </html>

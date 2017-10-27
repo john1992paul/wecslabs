@@ -31,6 +31,11 @@
 </body>
 
 <script type="text/javascript">
+    $('.project_name').click(function(e){
+        var project = $(e.currentTarget).children('h1').text();
+        var url = '/project_activities/' + project;
+        window.location.href = url;
+    });
     $('.edit_members').click(function(e){
         var project = $(e.currentTarget).siblings('.project_name').children('h1').text();
         var url = '/create_project/add_project_mem/' + project;

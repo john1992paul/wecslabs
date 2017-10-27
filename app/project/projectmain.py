@@ -139,10 +139,10 @@ def submit_members():
  			":attrValue1" : ['Joined a Project']
 		})
 
-		login_session['awards'].append('C')
-		login_session['award_tag'].append('Joined a project')
-
-		login_session['display'].append({'id': 1,'award': '/static/img/awards/C.png', 'desc': 'Joined a Project'})
+		if titan_id == login_session['titan_id']:
+			login_session['awards'].append('C')
+			login_session['award_tag'].append('Joined a project')
+			login_session['display'].append({'id': 1,'award': '/static/img/awards/C.png', 'desc': 'Joined a Project'})
 
 
 	return "Success"
