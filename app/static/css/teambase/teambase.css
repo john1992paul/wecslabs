@@ -1,0 +1,169 @@
+html{
+	background-color: #1b1b1b;
+	overflow-y: hidden;
+}
+body{
+	max-width: 100%;
+	margin :0px;
+	text-align: center;
+}
+
+p{
+	margin: 0;
+  	display: inline-block;
+	font-size: 1.4vw;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: lighter;
+ 	color: #fff;
+}
+
+h1{
+	padding-top: 4vh;
+	margin: 0px;
+	padding-bottom: 4vh;
+	font-size: 1.5vw;
+	color: #ffbb00;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 700;
+}
+
+img{
+	max-width: 80%
+}
+
+input{
+	width: 90%;
+	height: 5vh;
+	font-family: 'Josefin Sans', sans-serif;
+	padding-left: 1vw;
+	font-size: 1.3vw;
+}
+
+.hidden{
+  display: none !important;
+}
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+#wecs {
+  height: 3vw;
+}
+.logo {
+	display: inline-block;
+	float: left;
+    height: 10vh;
+    width: 10vw;
+    margin-left: 2%;
+    position: relative;
+}
+.navbar {
+  background-color: #000;
+  width:100%;
+  height: 10vh;
+  position: relative;
+  margin-bottom: 0px;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.button {
+	color: #fff;
+    float: right;
+    margin-right: 5vw;
+    margin-top: 2.2vh;
+    font-size: 1vw;
+    background-color: rgb(67, 85, 122);
+    padding: 1vw;
+    border-radius: 0.8vw;
+    font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+}
+
+.home {
+	margin-right: 1vw;
+}
+
+.members{
+	display: inline-block;
+	position: relative;
+	width: 35%;
+	height: 85vh;
+	margin-top: 2vh;
+	vertical-align: top;
+	padding-right: 1vw;
+	border-right: 1px solid #cecece;
+}
+
+.member{
+	width: 30%;
+	height: 10vh;
+	margin: auto;
+	margin-bottom: 1vh;
+	border-radius: 0.5vw;
+	background: #290c0c;
+	border: 1px solid #3a3a3a;
+	cursor: pointer;
+}
+
+.member:hover{
+  box-shadow:  0 0 25px  rgba(255,255,255,0.6);
+}
+
+.photo, .action_button{
+	position: relative;
+	display: inline-block;
+	width: 10vh;
+	height: 10vh;
+}
+
+.photo img{
+	border-radius: 100%;
+}
+
+.name{
+	position: relative;
+	display: inline-block;
+	height: 10vh;
+	width: calc(95% - 20vh);
+}
+
+.member_name{
+	position: relative;
+	display: inline-block;
+	height: 10vh;
+	width: calc((95% - 20vh)/3);
+}
+
+
+main{
+	display: inline-block;
+	position: relative;
+	width: 60%;
+	height: 75vh;
+	margin-top: 2vh;
+	vertical-align: top;
+	padding-left: 1vh;
+}
+
+
+button:focus {outline:0;}
+
+@media only screen and (max-width: 800px) {
+.laptop{
+	display: none;
+}
+main{
+  width: 100%;
+  margin-left: 0;
+}
+
+.logo {
+  margin: auto;
+}}

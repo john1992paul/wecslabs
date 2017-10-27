@@ -10,6 +10,7 @@ dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('project_activities')
 table_user = dynamodb.Table('wecslabsuser')
 table_activity_stats = dynamodb.Table('activity_stats')
+table_project = dynamodb.Table('project')
 
 @project.route('/project_activities/<project_name>')
 def project_activities(project_name):
@@ -117,3 +118,22 @@ def save_activiies():
 		)
 
 	return ("Success")
+
+@project.route('/edit_project')
+def edit_project():
+	projects = []
+	response = table_project.scan()
+	items = response['Items']
+	for item in items:
+		projects.append(item['project_name'])
+	return render_template('project/edit_project.html', projects = projects)
+
+@project.route('/edit_project/delete', methods=['POST'])
+def delete_project():
+	project = request.form['project']
+	table_project.delete_item(
+	    Key={
+	        'project_name': project
+	    }
+	)
+	return "Success"

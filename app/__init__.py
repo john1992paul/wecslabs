@@ -23,4 +23,7 @@ def create_app(config_name):
 	from .project import project as project_blueprint
 	app.register_blueprint(project_blueprint)
 
+	from .teambase import teambase as teambase_blueprint
+	app.register_blueprint(teambase_blueprint)
+
 	return app

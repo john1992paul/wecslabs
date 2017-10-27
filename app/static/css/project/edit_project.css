@@ -1,0 +1,176 @@
+html{
+	background-color: #1b1b1b;
+	overflow-y: hidden;
+}
+body{
+	max-width: 100%;
+	margin :0px;
+	text-align: center;
+}
+
+p{
+	margin: 0;
+  	display: inline-block;
+	font-size: 1.1vw;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: lighter;
+ 	color: #fff;
+}
+
+h1{
+	padding-top: 2vh;
+	margin: 0px;
+	padding-bottom: 0vh;
+	font-size: 5vw;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 700;
+}
+
+.address{
+	margin-top: -0.5vh;
+}
+
+#wecs {
+  height: 3vw;
+}
+.logo {
+	display: inline-block;
+	float: left;
+    height: 10vh;
+    width: 10vw;
+    margin-left: 2%;
+    position: relative;
+}
+.navbar {
+  background-color: #000;
+  width:100%;
+  height: 10vh;
+  position: relative;
+  margin-bottom: 0px;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.button {
+	color: #fff;
+    float: right;
+    margin-right: 5vw;
+    margin-top: 2.2vh;
+    font-size: 1vw;
+    background-color: rgb(67, 85, 122);
+    padding: 1vw;
+    border-radius: 0.8vw;
+    font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.home {
+	margin-right: 1vw;
+}
+
+main{
+	display: inline-block;
+	position: relative;
+	width: 60%;
+	min-height: calc(90vh);
+	margin-top: 4vh;
+	vertical-align: top;
+}
+
+.project_list{
+	position: relative;
+	width: 100%;
+    height: 10vh;
+    font-size: 4vw;
+    margin-bottom: 1vh;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #fff;
+    border: 1px solid #c0c0c0;
+    cursor: pointer;
+}
+
+.header{
+  color: #fff;
+  margin-bottom: 4vh;
+}
+
+.project_name{
+  position: relative;
+  height: 10vh;
+  width: calc(91% - 30vh);
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+
+.project_list:hover{
+  box-shadow:  0 0 25px  rgba(255,255,255,0.6);
+}
+
+.project_name h1{
+  padding-left: 1.5vw;
+    padding-top: 2.8vh;
+    font-size: 2.5vw;
+}
+
+.edit_members{
+  position: relative;
+  width: 10vh;
+  height: 10vh;
+  display: inline-block;
+}
+
+.edit_members:hover .proj_img{
+  max-width: 80%;
+}
+
+.activity_editor{
+  position: relative;
+  width: 10vh;
+  height: 10vh;
+  display: inline-block;
+}
+
+.activity_editor:hover .proj_img{
+  max-width: 80%;
+}
+
+.delete_project{
+  position: relative;
+  width: 10vh;
+  height: 10vh;
+  display: inline-block;
+}
+
+.delete_project:hover .proj_img{
+  max-width: 80%;
+}
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+#project_name{
+  font-size: 3vw;
+}
+
+.proj_img{
+  max-width: 60%;
+}
+
+@media only screen and (max-width: 800px) {
+.laptop{
+	display: none;
+}
+main{
+  width: 100%;
+  margin-left: 0;
+}
+
+.logo {
+  margin: auto;
+}}

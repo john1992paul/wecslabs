@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale=1">
+	<link rel="stylesheet"  href={{url_for('static', filename = 'css/project/edit_project.css')}}>
+	<link href="https://fonts.googleapis.com/css?family=Bitter:700|Josefin+Sans:300,400,600,700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+   <!-- Navigation Bar -->
+    <nav class = "navbar">  
+    	<div class="logo"><img class = "center" src={{url_for('static', filename = 'img/common/logo.png')}} alt="wecs" id="wecs" ></div>
+    	<a href={{url_for('auth.fbdisconnect')}}><div class="signout button">Logout</div></a>
+        <a href={{url_for('profile.profile_redirect')}}><div class="home button">Home</div></a>
+    </nav>
+
+    <main class ="laptop">
+        <h1 class="header">Project List</h1>
+        {% for project in projects %}
+            <div class="project_list">
+                <div class="project_name"><h1>{{project}}</h1></div>
+                <div class="edit_members"><img class="center proj_img" src={{url_for('static', filename = 'img/project/social.png')}}></div>
+                <div class="activity_editor"><img class="center proj_img" src={{url_for('static', filename = 'img/project/planner.png')}}></div>
+                <div class="delete_project"><img class="center proj_img" src={{url_for('static', filename = 'img/project/wrong.png')}}></div>
+            </div>
+        {% endfor %}
+    </main>
+
+</body>
+
+<script type="text/javascript">
+    $('.edit_members').click(function(e){
+        var project = $(e.currentTarget).siblings('.project_name').children('h1').text();
+        var url = '/create_project/add_project_mem/' + project;
+        window.location.href = url;
+    });
+    $('.activity_editor').click(function(e){
+        var project = $(e.currentTarget).siblings('.project_name').children('h1').text();
+        var url = '/project_activities/' + project;
+        window.location.href = url;
+    });
+    $('.delete_project').click(function(e){
+        var project = $(e.currentTarget).siblings('.project_name').children('h1').text();
+        var data = {'project':project};
+        $.ajax({
+            method:'POST',
+            url:'/edit_project/delete',
+            data: data
+        });
+        $(e.currentTarget).parent().hide();
+    });
+</script>
+
+
+</html>

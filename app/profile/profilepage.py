@@ -53,6 +53,16 @@ def profile_page(titan_id):
 			cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/john-medium.png'
 		if login_session['username'] == 'Abin Mittu':
 			cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/abin-medium.png'
+		if login_session['username'] == 'Steve Paul':
+			cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/steve-medium.png'
+		if login_session['username'] == 'Thomas George':
+			cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/thomas-medium.png'
+		if login_session['username'] == 'Jobin Geo':
+			cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/jobin-medium.png'
+		if login_session['username'] == 'Eldose':
+			cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/sunny-medium.png'
+		if login_session['username'] == 'Philipose Kuriakose':
+			cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/philipose-medium.png'
 
 		return render_template('profile/profile.html',  titan_id=login_session['titan_id'],
 															username=login_session['username'],
@@ -94,6 +104,16 @@ def profile_page(titan_id):
 			form=int(100*user['comp_day_tasks']/user['max_tasks'])
 			pro_pic="https://s3.us-east-2.amazonaws.com/wecslabspropic/dp" + titan_id + ".jpg"
 
+			length = len(user['awards'])
+
+			award_1 = "/static/img/awards/" + user['awards'][length-1] + ".png"
+			award_2 = "/static/img/awards/" + user['awards'][length-2] + ".png"
+			award_3 = "/static/img/awards/" + user['awards'][length-3] + ".png"
+
+			award_tag_1 = user['award_tag'][length-1]
+			award_tag_2 = user['award_tag'][length-2]
+			award_tag_3 = user['award_tag'][length-3]
+
 			if user['username'] == 'John Paul':
 				cartoon_image='https://s3.us-east-2.amazonaws.com/wecslabspropic/john-medium.png'
 
@@ -122,9 +142,12 @@ def profile_page(titan_id):
 																day_perc=cdt,
 																tot_perc=ctt,
 																form=form,
-																award_1="https://s3.us-east-2.amazonaws.com/wecslabspropic/john-medium.png",
-																award_2="https://s3.us-east-2.amazonaws.com/wecslabspropic/john-medium.png",
-																award_3="https://s3.us-east-2.amazonaws.com/wecslabspropic/john-medium.png")
+																award_1=award_1,
+																award_2=award_2,
+																award_3=award_3,
+																award_tag_1 = award_tag_1,
+																award_tag_2 = award_tag_2,
+																award_tag_3 = award_tag_3)
 		except:
 			return "User not found"
 
