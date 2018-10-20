@@ -7,8 +7,8 @@ class Configure:
 	MAIL_PORT = 465
 	MAIL_USE_TLS = False
 	MAIL_USE_SSL = True
-	MAIL_USERNAME = 'john92paul@gmail.com'
-	MAIL_PASSWORD = 'bodybuilde'
+	MAIL_USERNAME = '########@gmail.com'
+	MAIL_PASSWORD = '######'
 
 	DB_PORT = 8182
 
